@@ -1,5 +1,5 @@
 import "./Home.scss"
-import Board from "../../assets/board.jpg"
+
 import Posts from "../../components/posts/Posts";
 
 const Home = () => {

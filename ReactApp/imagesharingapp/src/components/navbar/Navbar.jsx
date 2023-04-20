@@ -19,6 +19,11 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="right">
+                <div className="addPost">
+                    <Link to="/createPost">
+                    <button>Add Image</button>
+                    </Link>
+                </div>
                 <div className="user">
                     <img src={currentUser.profilePic} alt=""/>
                 <span>{currentUser.name}</span>

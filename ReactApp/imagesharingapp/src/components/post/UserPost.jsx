@@ -1,4 +1,5 @@
 import "./post.scss"
+import moment from "moment"
 
 const UserPost = ({post}) =>{
     return (
@@ -7,6 +8,7 @@ const UserPost = ({post}) =>{
             <div className="content">
                 <p>{post.desc}</p>
                 <img src={post.img} alt=""/>
+<span className="date">{moment(post.date).fromNow()}</span>
             </div>
             </div>
         </div>

@@ -35,6 +35,17 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    .addPost {
+      button {
+        cursor: pointer;
+        background-color:red;
+        color: #fff;
+        border:none;
+        border-radius:10px;
+        min-height:30px;
+        min-width: 120px;
+      }
+    }
     .user {
       display: flex;
       align-items: center;

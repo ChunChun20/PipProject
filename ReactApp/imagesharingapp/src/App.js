@@ -10,19 +10,27 @@ import Home from "./Pages/Home/Home";
 import Profile from "./Pages/Profile/Profile";
 import {useContext} from "react";
 import {AuthContext} from "./context/authContext";
+import { QueryClient, QueryClientProvider} from 'react-query'
+
+import CreatePost from "./Pages/PostCreation/CreatePost";
 
 
 function App() {
     const {currentUser} = useContext(AuthContext);
 
+    const queryClient = new QueryClient()
+
     const Layout = () => {
         return (
+        <QueryClientProvider client={queryClient}>
+
             <div>
             <Navbar/>
                 <div style={{display:"flex"}}>
             <Outlet/>
                 </div>
             </div>
+        </QueryClientProvider>
         );
     };
 
@@ -47,7 +55,14 @@ function App() {
                 {
                     path:"/profile/:id",
                     element:<Profile/>
-                }
+                },
+                {
+                    path:"/createPost",
+                    element:
+                        <QueryClientProvider client={queryClient}>
+                        <CreatePost/>
+                        </QueryClientProvider>
+                },
             ]
         },
         {
