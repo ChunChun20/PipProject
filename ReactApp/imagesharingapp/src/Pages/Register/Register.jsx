@@ -30,27 +30,34 @@ setError(err.response.data)
     }
 
     return (
-        <div className="register"><div className="card">
+        <div className="register">
+            <div className="card">
             <div className="left">
-                <h1>Hello</h1>
-                <p>Amogus</p>
-                <span>Already have an account?</span>
-                <Link to="/login">
-                <button>Login</button>
-                </Link>
-            </div>
-            <div className="right">
-                <h1>Register</h1>
                 <form action="">
-                    <input type="text" placeholder="Username" name="username" onChange={handleChange}/>
-                    <input type="text" placeholder="email" name="email" onChange={handleChange}/>
-                    <input type="password" placeholder="Password" name="password" onChange={handleChange}/>
-                    <input type="text" placeholder="Name" name="name" onChange={handleChange}/>
+                    <label  name="nameLabel">Name</label>
+                    <input type="text" name="name" onChange={handleChange}/>
+                    <label  name="emailLabel">Email</label>
+                    <input type="text" name="email" onChange={handleChange}/>
+                    <label  name="usernameLabel">Username</label>
+                    <input type="text" name="username" onChange={handleChange}/>
+                    <label  name="passwordLabel">Password</label>
+                    <input type="password" name="password" onChange={handleChange}/>
+                   
 
                     {/*show error type if there is an error*/}
                     { err && err}
                     <button onClick={handleClick}>Register</button>
                 </form>
+
+
+
+            </div>
+            <div className="right">
+               
+            <h1>Already have an account ?</h1>
+                <Link to="/login">
+                <button>Login</button>
+                </Link>
             </div>
         </div>
         </div>

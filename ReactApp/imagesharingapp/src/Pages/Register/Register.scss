@@ -1,66 +1,122 @@
+@font-face {
+  font-family: "StickyNotes";
+  src: local("StickyNotes"),
+   url('../../assets/sticky_notes_3/StickyNotes.ttf');
+  font-weight: regular;
+ } 
+body{
+  background-image: url('../../assets/background1.png');
+  background-repeat: no-repeat;
+}
 .register {
-  height: 100vh;
-  background-color: cornflowerblue;
+  font-family: StickyNotes;
+  height: 100hv;
+  
+  // background-color: cornflowerblue;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10%;
   .card{
+
     width: 50%;
     display: flex;
-    background-color: azure;
-    border-radius: 10px;
-    min-height: 600px;
+    min-height: 80%;
+    // background-color: azure;
+    // border-radius: 10px;
+    font-family: StickyNotes;
+
+    
     .left {
+      background-image: url('../../assets/pink-note.png');
+      background-size: 120%;
+      background-repeat: no-repeat;
       flex:1;
       padding: 50px;
       display: flex;
       flex-direction: column;
       gap: 30px;
       color: black;
+      min-height: 50%;
 
       h1 {
-        font-size: 75px;
-        line-height: 100px;
-      }
-      p {}
-      span {
-        font-size: 14px;
+        font-size:2em;
+        // line-height: 100px;
       }
       button {
+        font-size:1em;
+        font-family: StickyNotes;
         width: 50%;
         padding: 10px;
         border: none;
-        background-color: aqua;
+        background-color: transparent;
         color: black;
         font-weight: bold;
         cursor: pointer;
       }
+      form{
+        padding-left: 20%;
+        padding-top: 20%;
+        font-size: larger;
+        display: flex;
+        flex-direction: column;
+        // gap:30px;
+        input {
+          font-family: StickyNotes;
+          font-size: 1em;
+          background-color: transparent;
+          border: none;
+          border-bottom: 1px solid black;
+          max-width: 80%;
+          margin: 0.5%;
+          // padding: 20px 10px;
+        }
+        input[name="password"] {
+          font-size: 1em;
+          letter-spacing: 0.125em;
+
+        }
+        button {
+          font-size: 2em;
+          width: 50%;
+          // padding-top: 10%;
+          border: none;
+          font-weight: bold;
+          cursor: pointer;
+        }
+        // label[name="passwordLabel"]{
+        //   padding-top: 10%;
+        // }
+      }
+
     }
     .right {
+      // background-image: url('../../assets/post-it-note.png');
+      background-image: url('../../assets/textbook2.png');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      min-height: 50%;
+      white-space: nowrap;
       flex:1;
       padding: 50px;
       display: flex;
       flex-direction: column;
       gap:50px;
-      justify-content: center;
-      h1{}
-      form{
-        display: flex;
-        flex-direction: column;
-        gap:30px;
-        input {
-          border: none;
-          border-bottom: 1px solid azure;
-          padding: 20px 10px;
-        }
-        button {
-          width: 50%;
-          padding: 10px;
-          border: none;
-          background-color: aqua;
-          font-weight: bold;
-          cursor: pointer;
-        }
+      // justify-content: center;
+      h1{
+        font-size:2em;
+        margin-top: 0%;
+        margin-bottom: 0%;
+      }
+      button {
+        font-size:2em;
+        font-family: StickyNotes;
+        width: 80%;
+        border:1cm;
+        background-color: transparent;
+        color: black;
+        cursor: pointer;
+        font-weight: bold;
       }
     }
   }

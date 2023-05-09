@@ -36,21 +36,24 @@ const Login = () => {
         <div className="login">
             <div className="card">
             <div className="left">
-<h1>Hello</h1>
-                <p>Hellow kiddo</p>
-                <span>Don't have an account?</span>
+            <form action="">
+                    <h1>Login</h1>
+                    <label  name="usernameLabel">Username</label>
+                        <input type="text" name="username" onChange={handleChange}/>
+                        <label name="passwordLabel">Password</label>
+                        <input type="password" name="password" onChange={handleChange}/>
+                        {err && err}
+                        <button onClick={handleLogin}>Enter</button>
+                        </form>
+            </div>
+                <div className="right">
+                    
+                    <div><br></br>
+                        <p><h1>Don't have an account?&nbsp;&nbsp;&nbsp;</h1></p>
                 <Link to="/register">
                 <button>Register</button>
                 </Link>
-            </div>
-                <div className="right">
-                    <h1>Login</h1>
-                    <form action="">
-                        <input type="text" placeholder="Username" name="username" onChange={handleChange}/>
-                        <input type="password" placeholder="Password" name="password" onChange={handleChange}/>
-                        {err && err}
-                        <button onClick={handleLogin}>Login</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
