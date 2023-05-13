@@ -6,10 +6,11 @@ const UserPost = ({post}) =>{
         <div className='post'>
             <div className="container">
             <div className="content">
-                <p>{post.desc}</p>
-                <img src={post.img} alt=""/>
-<span className="date">{moment(post.date).fromNow()}</span>
-            </div>
+                    <p>{post.desc}</p>
+                    <img src={post.img} alt=""/>
+                <div className="date">{moment(post.date).fromNow()}</div>
+                </div>
+
             </div>
         </div>
     )

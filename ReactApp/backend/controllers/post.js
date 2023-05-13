@@ -44,3 +44,26 @@ export const addPosts =  (req,res) => {
     })
 })
 }
+
+
+export const deletePost = (req, res) => {
+    const postId = req.params.id;
+    const token = req.cookies.accessToken;
+
+    if (!token) return res.status(401).json("Not logged in");
+
+    jwt.verify(token, "secretkey", (err, userInfo) => {
+       if (err) return res.status(403).json("Token is not valid");
+
+        const query = "DELETE FROM posts WHERE id = ?";
+        const values = [postId];
+
+        db.query(query, values, (err, data) => {
+            if (err) return res.status(500).json(err);
+            if (data.affectedRows === 0) {
+                return res.status(404).json("Post not found or user not authorized");
+            }
+            return res.status(200).json("Post has been deleted");
+        });
+   });
+};

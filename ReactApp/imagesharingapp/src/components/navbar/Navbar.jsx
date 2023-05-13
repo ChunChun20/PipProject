@@ -7,6 +7,8 @@ import {AuthContext} from "../../context/authContext";
 const Navbar = () => {
     const { currentUser } = useContext(AuthContext);
 
+    const user = JSON.parse(localStorage.getItem("user"));
+    const userId = user.id;
     return (
         <div className="navbar">
             <div className="left">
@@ -25,7 +27,9 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <div className="user">
-                    <img src={currentUser.profilePic} alt=""/>
+                    <Link to={`/profile/${userId}`}>
+                        <img src={currentUser.profilePic} alt=""/>
+                    </Link>
                 <span>{currentUser.name}</span>
                 </div>
             </div>
