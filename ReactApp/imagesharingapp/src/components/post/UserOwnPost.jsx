@@ -1,7 +1,8 @@
 import "./post.scss"
 import moment from "moment"
 
-const UserPost = ({post}) =>{
+
+const UserOwnPost = ({post}) =>{
     return (
         <div className='post'>
             <div className="container">
@@ -16,4 +17,4 @@ const UserPost = ({post}) =>{
     )
 }
 
-export default UserPost
+export default UserOwnPost

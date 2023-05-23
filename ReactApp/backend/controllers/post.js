@@ -11,7 +11,7 @@ export const getPosts =  (req,res) => {
         if(err) return res.status(403).json("Token is not valid")
 
 
-    const query = `SELECT p.*,u.id as userID FROM posts AS p JOIN users AS u ON (u.id = p.userID)`
+    const query = `SELECT p.*,u.id as userID FROM posts AS p JOIN users AS u ON (u.id = p.userID) ORDER BY date DESC`
 
     db.query(query,(err,data) => {
         if(err) return res.status(500).json(err);
@@ -55,13 +55,13 @@ export const deletePost = (req, res) => {
     jwt.verify(token, "secretkey", (err, userInfo) => {
        if (err) return res.status(403).json("Token is not valid");
 
-        const query = "DELETE FROM posts WHERE id = ?";
-        const values = [postId];
+        const query = "DELETE FROM posts WHERE `id` = ? AND `userId` = ?";
+        const values = [postId,userInfo.id];
 
         db.query(query, values, (err, data) => {
             if (err) return res.status(500).json(err);
-            if (data.affectedRows === 0) {
-                return res.status(404).json("Post not found or user not authorized");
+            if (data.affectedRows ===  0) {
+                return res.status(403).json("Post not found or user not authorized");
             }
             return res.status(200).json("Post has been deleted");
         });
