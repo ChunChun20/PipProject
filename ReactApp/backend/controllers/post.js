@@ -11,7 +11,7 @@ export const getPosts =  (req,res) => {
         if(err) return res.status(403).json("Token is not valid")
 
 
-    const query = `SELECT p.*,u.id as userID FROM posts AS p JOIN users AS u ON (u.id = p.userID)`
+    const query = `SELECT p.*,u.id as userID FROM posts AS p JOIN users AS u ON (u.id = p.userID) ORDER BY date DESC`
 
     db.query(query,(err,data) => {
         if(err) return res.status(500).json(err);
