@@ -3,6 +3,7 @@ import {Link, useNavigate} from "react-router-dom";
 import {useContext, useState} from "react";
 import {AuthContext} from "../../context/authContext";
 
+
 const Login = () => {
     const [inputs,setInputs] = useState({
         username:"",
@@ -19,13 +20,18 @@ const Login = () => {
     }
 
 
+
     const {login} = useContext(AuthContext);
 
     const handleLogin = async (event) => {
         event.preventDefault()
         try{
            await login(inputs);
+           console.log('Login successful');
            navigate("/")
+
+
+
         }catch(err){
             setError(err.response.data);
         }
@@ -49,7 +55,9 @@ const Login = () => {
                         <input type="text" placeholder="Username" name="username" onChange={handleChange}/>
                         <input type="password" placeholder="Password" name="password" onChange={handleChange}/>
                         {err && err}
-                        <button onClick={handleLogin}>Login</button>
+
+                            <button type="button" onClick={handleLogin}>Login</button>
+
                     </form>
                 </div>
             </div>

@@ -48,6 +48,7 @@ export const login = (req,res) => {
         //creating cookie to keep track of current logged user
         res.cookie("accessToken",token,{
             httpOnly:true,
+            expires: new Date(Date.now() + 999999999)
         }).status(200).json(others)
     })
 

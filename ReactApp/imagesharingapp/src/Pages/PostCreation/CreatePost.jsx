@@ -6,7 +6,7 @@ import {
     useQueryClient,
 } from 'react-query'
 import {makeRequest} from "../../axios";
-import {Navigate} from "react-router-dom";
+
 
 
 
