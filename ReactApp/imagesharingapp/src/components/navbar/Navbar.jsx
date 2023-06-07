@@ -1,14 +1,18 @@
 import "./navbar.scss"
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import {useContext} from "react";
 import {AuthContext} from "../../context/authContext";
+import SearchBar from "../searchBar/SearchBar";
 
 
 const Navbar = () => {
+    // const location = useLocation()
+    // console.log(location.pathname)
+
     const { currentUser } = useContext(AuthContext);
 
     const user = JSON.parse(localStorage.getItem("user"));
-    const userId = user.id;
+    const username = user.name;
     return (
         <div className="navbar">
             <div className="left">
@@ -17,7 +21,7 @@ const Navbar = () => {
                 </Link>
                 <div className="search">
 
-                    <input type="text" placeholder="Search..."/>
+                    <SearchBar />
                 </div>
             </div>
             <div className="right">
@@ -27,7 +31,7 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <div className="user">
-                    <Link to={`/profile/${userId}`}>
+                    <Link to={`/profile/${username}`}>
                         <img src={currentUser.profilePic} alt=""/>
                     </Link>
                 <span>{currentUser.name}</span>

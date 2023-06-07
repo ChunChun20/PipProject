@@ -46,10 +46,12 @@ const CreatePost = () => {
     const handleClick = async (event) => {
         event.preventDefault()
         let imgUrl = ""
+        let name = currentUser.name
         if(file) imgUrl = await upload()
-        mutation.mutate({desc,img:imgUrl})
+        mutation.mutate({desc,img:imgUrl,name:name})
         setDesc("")
         setFile(null)
+
 
     }
 

@@ -13,6 +13,7 @@ import {AuthContext} from "./context/authContext";
 import { QueryClient, QueryClientProvider} from 'react-query'
 
 import CreatePost from "./Pages/PostCreation/CreatePost";
+import OtherUserProfile from "./Pages/Profile/OtherUserProfile";
 
 
 function App() {
@@ -53,8 +54,9 @@ function App() {
                     element:<Home/>
                 },
                 {
-                    path:"/profile/:id",
-                    element:<Profile/>
+                    path:"/profile/:username",
+                    element:<OtherUserProfile/>
+
                 },
                 {
                     path:"/createPost",

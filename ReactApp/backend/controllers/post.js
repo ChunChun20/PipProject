@@ -36,7 +36,9 @@ export const addPosts =  (req,res) => {
         desc: req.body.desc,
         img: req.body.img,
         date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
-        userId: userInfo.id}
+        userId: userInfo.id,
+        username: req.body.name}
+
 
     db.query(query,values,(err,data) => {
         if(err) return res.status(500).json(err);
