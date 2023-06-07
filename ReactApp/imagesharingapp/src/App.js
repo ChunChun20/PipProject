@@ -7,13 +7,13 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./Pages/Home/Home";
-import Profile from "./Pages/Profile/Profile";
 import {useContext} from "react";
 import {AuthContext} from "./context/authContext";
 import { QueryClient, QueryClientProvider} from 'react-query'
 
 import CreatePost from "./Pages/PostCreation/CreatePost";
 import OtherUserProfile from "./Pages/Profile/OtherUserProfile";
+
 
 
 function App() {

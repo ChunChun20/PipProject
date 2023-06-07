@@ -14,7 +14,7 @@ const Navbar = () => {
     const user = JSON.parse(localStorage.getItem("user"));
     const username = user.name;
     return (
-        <div className="navbar">
+        <div className="navbar">BlackNuts
             <div className="left">
                 <Link to="/" style={{textDecoration:"none"}}>
                 <span>Images</span>
@@ -32,7 +32,7 @@ const Navbar = () => {
                 </div>
                 <div className="user">
                     <Link to={`/profile/${username}`}>
-                        <img src={currentUser.profilePic} alt=""/>
+                        <img src={"http://localhost:3000/" + currentUser.profilePic} alt=""/>
                     </Link>
                 <span>{currentUser.name}</span>
                 </div>

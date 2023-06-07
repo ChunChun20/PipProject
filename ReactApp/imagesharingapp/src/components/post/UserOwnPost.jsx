@@ -8,7 +8,7 @@ const UserOwnPost = ({post}) =>{
             <div className="container">
                 <div className="content">
                     <p>{post.desc}</p>
-                    <img src={post.img} alt=""/>
+                    <img src={"http://localhost:3000/" + post.img} alt=""/>
                     <div className="date">{moment(post.date).fromNow()}</div>
                 </div>
 

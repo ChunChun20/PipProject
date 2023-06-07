@@ -5,7 +5,7 @@ import { useMutation, useQuery, useQueryClient } from "react-query";
 
 const Profile = () => {
     const user = JSON.parse(localStorage.getItem("user"));
-    const userId = user.id
+    const userId = user.id;
     const userName = user.username;
 
     const { isLoading, error, data } = useQuery("posts", () =>
