@@ -6,9 +6,11 @@ import {
     useQueryClient,
 } from 'react-query'
 import {makeRequest} from "../../axios";
+
 import {Navigate} from "react-router-dom";
 import addImage from "../../assets/add-image.png"
 import uploadImage from "../../assets/upload.png"
+
 
 
 
@@ -49,10 +51,12 @@ const CreatePost = () => {
     const handleClick = async (event) => {
         event.preventDefault()
         let imgUrl = ""
+        let name = currentUser.name
         if(file) imgUrl = await upload()
-        mutation.mutate({desc,img:imgUrl})
+        mutation.mutate({desc,img:imgUrl,name:name})
         setDesc("")
         setFile(null)
+
 
     }
     
@@ -60,6 +64,7 @@ const CreatePost = () => {
   const isFileSelected = file !== null;
 
     return (
+
         <div className="createpost">
             <div className="container">
                 <div className="top">
@@ -98,8 +103,12 @@ const CreatePost = () => {
 
                     </div>
                 </div>
+
             </div>
+
         </div>
+
     );
+
 };
 export default CreatePost

@@ -10,6 +10,7 @@ import likebutton from '../../assets/like.svg'
 const UserPost = ({post}) =>{
     return (
         <div className='post'>
+
           <div className="container">
             <img className='pin' src={pin} alt="pin" />
             <div className="content">
@@ -18,6 +19,7 @@ const UserPost = ({post}) =>{
               <span className="date">{moment(post.date).fromNow()}</span>
               <ShareButton />
               <img className='likebutton' src={likebutton} alt="likebutton" />
+
 
             </div>
           </div>

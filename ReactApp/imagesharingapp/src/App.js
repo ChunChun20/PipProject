@@ -7,14 +7,17 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./Pages/Home/Home";
-import Profile from "./Pages/Profile/Profile";
 import {useContext} from "react";
 import {AuthContext} from "./context/authContext";
 import { QueryClient, QueryClientProvider} from 'react-query'
 
 import CreatePost from "./Pages/PostCreation/CreatePost";
-import React from 'react';
+import React from "react";
+import OtherUserProfile from "./Pages/Profile/OtherUserProfile";
+import UpdateProfile from "./Pages/updateProfile/UpdateProfile";
 import ShareButton from './components/ShareButton/ShareButton.jsx';
+
+
 
 function App() {
     const {currentUser} = useContext(AuthContext);
@@ -54,14 +57,22 @@ function App() {
                     element:<Home/>
                 },
                 {
-                    path:"/profile/:id",
-                    element:<Profile/>
+                    path:"/profile/:username",
+                    element:<OtherUserProfile/>
+
                 },
                 {
                     path:"/createPost",
                     element:
                         <QueryClientProvider client={queryClient}>
                         <CreatePost/>
+                        </QueryClientProvider>
+                },
+                {
+                    path:"/updateProfile",
+                    element:
+                        <QueryClientProvider client={queryClient}>
+                            <UpdateProfile/>
                         </QueryClientProvider>
                 },
             ]
