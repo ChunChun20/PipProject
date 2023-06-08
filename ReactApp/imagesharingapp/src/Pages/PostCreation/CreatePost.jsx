@@ -7,6 +7,9 @@ import {
 } from 'react-query'
 import {makeRequest} from "../../axios";
 import {Navigate} from "react-router-dom";
+import addImage from "../../assets/add-image.png"
+import uploadImage from "../../assets/upload.png"
+
 
 
 
@@ -52,7 +55,9 @@ const CreatePost = () => {
         setFile(null)
 
     }
-
+    
+  // Check if file is selected
+  const isFileSelected = file !== null;
 
     return (
         <div className="createpost">
@@ -63,7 +68,7 @@ const CreatePost = () => {
                         src={currentUser.profilePic}
                         alt=""
                     />
-                    <input type="text" placeholder={`Enter your description ${currentUser.name}!`}
+                    <input type="text" placeholder={`Write something nice about your photo, ${currentUser.name}!`}
                            onChange={(event) => setDesc(event.target.value)}
                            value={desc}
                     />
@@ -80,14 +85,16 @@ const CreatePost = () => {
                         />
                         <label htmlFor="file">
                             <div className="item">
+                            <img class='addImage' src={addImage} alt="upload iamge" />
                                 <img src={Image} alt="" />
-                                <span>Add Image</span>
+                                <span> &nbsp; &nbsp;Add Image</span>
                             </div>
                         </label>
                     </div>
                     <div className="right">
+                    <img class='uploadImage' src={uploadImage} alt="upload image" onClick={handleClick} disabled={!isFileSelected}/>
 
-                        <button onClick={handleClick}>Upload</button>
+                    {/* <button onClick={handleClick} disabled={!isFileSelected}>Upload</button> */}
 
                     </div>
                 </div>

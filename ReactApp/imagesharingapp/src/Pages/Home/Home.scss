@@ -1,6 +1,19 @@
 body {
-  background-image: url('../../assets/background1.png');
-  background-size:auto;
+  background-image: url('../../assets/background2.png');
+  background-repeat: repeat;
+  //align-content: space-evenly;
+
 
 }
-
+.posts{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  gap: 2em 2em;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+// .post{
+//   background-color: black;
+// }

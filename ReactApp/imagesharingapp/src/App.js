@@ -13,7 +13,8 @@ import {AuthContext} from "./context/authContext";
 import { QueryClient, QueryClientProvider} from 'react-query'
 
 import CreatePost from "./Pages/PostCreation/CreatePost";
-
+import React from 'react';
+import ShareButton from './components/ShareButton/ShareButton.jsx';
 
 function App() {
     const {currentUser} = useContext(AuthContext);

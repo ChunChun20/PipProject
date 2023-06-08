@@ -1,0 +1,81 @@
+// ShareButton.scss
+@font-face {
+    font-family: "Fayesmousewriting";
+    src: local("Fayesmousewriting"),
+     url('../../assets/Fonts/Fayesmousewriting.ttf');
+    font-weight: regular;
+   } 
+   .share{
+    //position: absolute;
+    width: 20%;
+    max-width: 12%;
+    float: right;
+    margin-right: 25%;  
+    margin-top: -6%;    
+    // top: 70%;
+    // left: 90%;
+    height: auto;
+    border: 0px;
+    border-width: 0;
+  }
+.share-button {
+    // position: relative;
+    display: inline-flex;
+    align-items: center;
+    
+  }
+  
+  .bubble-menu {
+    position:absolute;
+    top: 90%;
+    left: 42%; /* Adjusted the value to reduce the gap */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Reduced the gap between buttons */
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 999;
+  
+    button {
+      font-family: Fayesmousewriting;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #eeeeee;
+      border: none;
+      border-radius: 4px;
+      padding: 8px;
+      color: black;
+      font-size: 0.7em;
+  
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #F8F8FF;
+      }
+    }
+  }
+  
+//   button { //mainbutton
+//     font-family: Fayesmousewriting;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     border-color: black;
+//     border-radius: 4px;
+//     border-width: thin;
+//     background-color: white;
+//     // padding: 8px 16px;
+//     color: black;
+//     font-size: 0.7em;
+//     cursor: pointer;
+//     transition: background-color 0.3s ease;
+  
+//     &:hover {
+//       background-color: #F8F8FF;
+//     }
+//   }

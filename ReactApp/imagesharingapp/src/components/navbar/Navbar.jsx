@@ -2,6 +2,7 @@ import "./navbar.scss"
 import {Link} from "react-router-dom";
 import {useContext} from "react";
 import {AuthContext} from "../../context/authContext";
+import homelogo from '../../assets/lgoo1.png'
 
 
 const Navbar = () => {
@@ -9,16 +10,18 @@ const Navbar = () => {
 
     return (
         <div className="navbar">
-            <div className="left">
-                <Link to="/" style={{textDecoration:"none"}}>
-                <span>Images</span>
+            <div className="home">
+                <Link to="/"> <img class='homelogo' src={homelogo} alt="home"/>
                 </Link>
+                </div>
+                <div className="left">
                 <div className="search">
-
                     <input type="text" placeholder="Search..."/>
                 </div>
+               
             </div>
             <div className="right">
+
                 <div className="addPost">
                     <Link to="/createPost">
                     <button>Add Image</button>

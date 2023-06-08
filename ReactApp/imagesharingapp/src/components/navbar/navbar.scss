@@ -1,19 +1,40 @@
+@font-face {
+  font-family: "Fayesmousewriting";
+  src: local("Fayesmousewriting"),
+   url('../../assets/Fonts/Fayesmousewriting.ttf');
+  font-weight: regular;
+ } 
 .navbar {
+  // background-image: url('../../assets/background2.png');
+  background-color: white;
+  font-family: Fayesmousewriting;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
   height: 50px;
-  border-bottom: 1px solid black;
-  position: sticky;
+  border: 2px solid black;
+  //position: sticky;
   top:0;
   background-color: white;
+
+  .homelogo{
+    position: absolute  ;
+    width: 100%;
+    max-width: 14%;
+    float: left;
+    margin-top: -3%;
+    margin-left: -2%;
+    
   .left{
     display: flex;
     align-items: center;
     gap:30px;
+
+
+    }
     span{
-        font-weight: bold;
+      font-weight: bold;
       font-size: 20px;
       color: dodgerblue;
     }
@@ -37,28 +58,34 @@
     gap: 20px;
     .addPost {
       button {
+        font-family: Fayesmousewriting;
         cursor: pointer;
-        background-color:red;
-        color: #fff;
+        background-color:white;
+        color: black;
         border:none;
-        border-radius:10px;
         min-height:30px;
         min-width: 120px;
+        font-size: 1.5em;
+        padding: 10%;
+        border-style: solid;
+        border-width: 2px;
+
       }
     }
     .user {
       display: flex;
       align-items: center;
-      gap:10px;
+      gap: 15%;
+      font-size: 1.5em;
       img {
         width: 40px;
         height: 40px;
         border-radius: 50%;
         object-fit: cover;
+        border-color: black;
+        border-width: 4px;
       }
 
-      span {
-      }
     }
   }
 }
