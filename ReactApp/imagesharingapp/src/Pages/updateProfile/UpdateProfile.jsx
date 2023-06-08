@@ -1,4 +1,4 @@
-import "./createpost.scss"
+import "./UpdateProfile.scss"
 import {useContext, useState} from "react";
 import {AuthContext} from "../../context/authContext";
 import {
@@ -13,9 +13,9 @@ import {makeRequest} from "../../axios";
 
 
 
-const CreatePost = () => {
+const UpdateProfile = () => {
     const [file,setFile] = useState(null)
-    const [desc,setDesc] = useState("")
+    const [email,setEmail] = useState("")
 
 
     const upload = async () => {
@@ -46,10 +46,10 @@ const CreatePost = () => {
     const handleClick = async (event) => {
         event.preventDefault()
         let imgUrl = ""
-        let name = currentUser.name
+
         if(file) imgUrl = await upload()
-        mutation.mutate({desc,img:imgUrl,name:name})
-        setDesc("")
+        mutation.mutate({email:email,img:imgUrl})
+        setEmail("")
         setFile(null)
 
 
@@ -62,14 +62,14 @@ const CreatePost = () => {
             <div className="container">
                 <div className="top">
                     <div className="left">
-                    <img
-                        src={currentUser.profilePic}
-                        alt=""
-                    />
-                    <input type="text" placeholder={`Enter your description ${currentUser.name}!`}
-                           onChange={(event) => setDesc(event.target.value)}
-                           value={desc}
-                    />
+                        <img
+                            src={currentUser.profilePic}
+                            alt=""
+                        />
+                        <input type="text" placeholder={`Enter your new Email Address: `}
+                               onChange={(event) => setEmail(event.target.value)}
+                               value={email}
+                        />
                     </div>
                     <div className="right">
                         {file && <img className="file" alt="" src={URL.createObjectURL(file)}/>}
@@ -84,13 +84,13 @@ const CreatePost = () => {
                         <label htmlFor="file">
                             <div className="item">
                                 <img src={Image} alt="" />
-                                <span>Add Image</span>
+                                <span>Add profile picture</span>
                             </div>
                         </label>
                     </div>
                     <div className="right">
 
-                        <button onClick={handleClick}>Upload</button>
+                        <button onClick={handleClick}>Update</button>
 
                     </div>
                 </div>
@@ -102,4 +102,4 @@ const CreatePost = () => {
     );
 
 };
-export default CreatePost
+export default UpdateProfile

@@ -56,9 +56,15 @@
         border-radius: 50%;
         object-fit: cover;
       }
+      select {
+        border: none;
+        outline: none;
+      }
+
 
       span {
       }
+
     }
   }
 }

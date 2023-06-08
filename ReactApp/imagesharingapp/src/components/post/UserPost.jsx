@@ -8,7 +8,7 @@ const UserPost = ({post}) =>{
                 <div className="content">
                     <p>{post.desc}</p>
                     <img src={post.img} alt=""/>
-                    <div className="date">{moment(post.date).fromNow()}</div>
+                    <div className="date">{moment(post.date).fromNow()}  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{post.username}</div>
                 </div>
 
             </div>

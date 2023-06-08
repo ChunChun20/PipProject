@@ -13,6 +13,7 @@ import { QueryClient, QueryClientProvider} from 'react-query'
 
 import CreatePost from "./Pages/PostCreation/CreatePost";
 import OtherUserProfile from "./Pages/Profile/OtherUserProfile";
+import UpdateProfile from "./Pages/updateProfile/UpdateProfile";
 
 
 
@@ -63,6 +64,13 @@ function App() {
                     element:
                         <QueryClientProvider client={queryClient}>
                         <CreatePost/>
+                        </QueryClientProvider>
+                },
+                {
+                    path:"/updateProfile",
+                    element:
+                        <QueryClientProvider client={queryClient}>
+                            <UpdateProfile/>
                         </QueryClientProvider>
                 },
             ]

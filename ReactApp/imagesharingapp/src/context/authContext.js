@@ -23,10 +23,19 @@ export const AuthContextProvider = ({ children }) => {
 
     };
 
+    const logout = async () => {
+        const res = await axios.post("http://localhost:8080/api/auth/logout",{
+            withCredentials:true,
+        })
+
+        setCurrentUser(null)
+
+    };
+
 
 
     return (
-        <AuthContext.Provider value={{currentUser,login}}>
+        <AuthContext.Provider value={{currentUser,login,logout}}>
             {children}
         </AuthContext.Provider>
     );
