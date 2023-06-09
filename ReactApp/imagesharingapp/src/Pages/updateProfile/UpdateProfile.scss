@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Fayesmousewriting";
+  src: local("Fayesmousewriting"),
+   url('../../assets/Fonts/Fayesmousewriting.ttf');
+  font-weight: regular;
+ } 
+
+
 .createpost {
   margin: 0 auto;
   margin-top: 20px;
@@ -5,7 +13,7 @@
 
   width:35%;
   .container {
-    background-color: azure;
+    background-color: white;
     padding: 20px;
 
     .top {
@@ -65,16 +73,19 @@
         .item {
           display: flex;
           align-items: center;
-          gap: 10px;
+          // gap: 10px;
           cursor: pointer;
+          
 
           img {
-            height: 20px;
+            height: 10%;
           }
 
           span {
-            font-size: 12px;
-            color: gray;
+            font-size: 1.5em;
+            color: black;
+            font-family: "Fayesmousewriting";
+
           }
         }
       }
