@@ -15,7 +15,7 @@ import {makeRequest} from "../../axios";
 
 const UpdateProfile = () => {
     const [file,setFile] = useState(null)
-    const [email,setEmail] = useState("")
+
 
 
     const upload = async () => {
@@ -33,13 +33,13 @@ const UpdateProfile = () => {
     //from react query docs used to auto refreash post page when we add new post
     const queryClient = useQueryClient()
 
-    const mutation = useMutation((newPost) => {
-        return makeRequest.post("/posts",newPost)
+    const mutation = useMutation((updateUser) => {
+        return makeRequest.put("/users",updateUser)
     },{
 
         onSuccess: () => {
             // Invalidate and refetch
-            queryClient.invalidateQueries(['posts'])
+            queryClient.invalidateQueries(['users'])
         },
     })
 
@@ -48,9 +48,13 @@ const UpdateProfile = () => {
         let imgUrl = ""
 
         if(file) imgUrl = await upload()
-        mutation.mutate({email:email,img:imgUrl})
-        setEmail("")
+        console.log(imgUrl)
+        mutation.mutate({profilePic:imgUrl})
+        const user = JSON.parse(localStorage.getItem('user'));
+        user.profilePic = imgUrl
+        localStorage.setItem('user', JSON.stringify(user));
         setFile(null)
+        window.location.reload()
 
 
     }
@@ -66,10 +70,9 @@ const UpdateProfile = () => {
                             src={currentUser.profilePic}
                             alt=""
                         />
-                        <input type="text" placeholder={`Enter your new Email Address: `}
-                               onChange={(event) => setEmail(event.target.value)}
-                               value={email}
-                        />
+                        <p>
+                                Update your profile picture
+                        </p>
                     </div>
                     <div className="right">
                         {file && <img className="file" alt="" src={URL.createObjectURL(file)}/>}

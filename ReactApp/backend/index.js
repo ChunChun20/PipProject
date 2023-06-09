@@ -45,6 +45,7 @@ app.use("/api/users",userRoutes)
 app.use("/api/posts",postRoutes)
 
 
+
 app.listen(8080, ()=> {
     console.log("Working!")
 })
