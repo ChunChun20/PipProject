@@ -65,7 +65,7 @@ const UpdateProfile = () => {
                             alt=""
                         />
                         <p>
-                                Update your profile picture
+                            &nbsp;&nbsp;Update your profile picture
                         </p>
                     </div>
                     <div className="right">

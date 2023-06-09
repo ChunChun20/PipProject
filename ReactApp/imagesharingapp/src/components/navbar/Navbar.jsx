@@ -69,7 +69,7 @@ const Navbar = () => {
                   my profile
                 </Link></li>
                 <li>
-                  <Link id="changePhoto" to="/changePhoto">
+                  <Link id="changePhoto" to="/updateProfile">
                     change&nbsp;photo
                   </Link>
                 </li>
