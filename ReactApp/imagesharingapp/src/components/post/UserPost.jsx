@@ -14,8 +14,10 @@ const UserPost = ({post}) =>{
           <div className="container">
             <img className='pin' src={pin} alt="pin" />
             <div className="content">
+
               <img src={post.img} alt="test" />
-              <p>{post.desc}</p>
+                <p>{post.username}: {post.desc}</p>
+
               <span className="date">{moment(post.date).fromNow()}</span>
               <ShareButton />
               {/* <img className='likebutton' src={likebutton} alt="likebutton" /> */}

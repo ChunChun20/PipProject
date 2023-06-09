@@ -45,6 +45,7 @@ const OtherUserProfile = () => {
 
     return (
         <div className="posts">
+
             {userPosts.length === 0 ? (
                 <div>No posts found for user {username}</div>
             ) : (
@@ -62,6 +63,7 @@ const OtherUserProfile = () => {
                 </div>
                 ))
             )}
+
         </div>
     );
 };
