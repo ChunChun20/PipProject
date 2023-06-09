@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './SearchButton.scss'
 const SearchButton = () => {
   const [isSearchVisible, setIsSearchVisible] = useState(false);
 
@@ -10,7 +10,9 @@ const SearchButton = () => {
   return (
     <div>
       {!isSearchVisible && (
+        
         <button onClick={handleSearchButtonClick}>Search</button>
+
       )}
       {isSearchVisible && (
         <div>

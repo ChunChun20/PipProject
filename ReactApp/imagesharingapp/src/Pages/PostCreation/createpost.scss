@@ -69,12 +69,12 @@ width:45%;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        
 
         .left {
           display: flex;
           align-items: center;
           gap: 20px;
-
           .item {
             display: flex;
             align-items: center;
@@ -84,7 +84,8 @@ width:45%;
             color: black;
             background-color: white;
             img {
-              max-width: 15%;
+            
+              max-width: 25%;
             }
 
             span {
@@ -95,7 +96,7 @@ width:45%;
         }
         .right {
           .uploadImage{
-            width: 12%;
+            width: 14.5%;
             float: right;
             margin-right: 10%;
           }

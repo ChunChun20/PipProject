@@ -73,7 +73,7 @@ const CreatePost = () => {
                         src={currentUser.profilePic}
                         alt=""
                     />
-                    <input type="text" placeholder={`Write something nice about your photo, ${currentUser.name}!`}
+                    <input type="text" placeholder={`Write something nice ${currentUser.name} !`}
                            onChange={(event) => setDesc(event.target.value)}
                            value={desc}
                     />
@@ -91,8 +91,8 @@ const CreatePost = () => {
                         <label htmlFor="file">
                             <div className="item">
                             <img class='addImage' src={addImage} alt="upload iamge" />
-                                <img src={Image} alt="" />
-                                <span> &nbsp; &nbsp;Add Image</span>
+                                {/* <img src={Image} alt="" /> */}
+                                <span>select&nbsp;image</span>
                             </div>
                         </label>
                     </div>

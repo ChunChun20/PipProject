@@ -7,12 +7,6 @@ import {
 } from 'react-query'
 import {makeRequest} from "../../axios";
 
-
-
-
-
-
-
 const UpdateProfile = () => {
     const [file,setFile] = useState(null)
 

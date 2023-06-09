@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Fayesmousewriting";
+  src: local("Fayesmousewriting"),
+   url('../../assets/Fonts/Fayesmousewriting.ttf');
+  font-weight: regular;
+} 
+
+.navbar {
+  // ... existing navbar styles ...
+
+  .user {
+    // ... existing user styles ...
+
+    .dropdown {
+      position: relative;
+
+      .dropdown-toggle {
+        background-color: white;
+        border-radius: 10px;
+
+        // ... existing styles for the user profile picture button ...
+
+        // Example styles for the dropdown arrow
+        &::after {
+          content: "";
+          display: inline-block;
+          width: 0;
+          height: 0;
+          vertical-align: middle;
+          border-top: 5px solid;
+          border-right: 5px solid transparent;
+          border-left: 5px solid transparent;
+        }
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 80%; // Position the menu below the user's username button
+        right: 0; // Adjust the position as needed
+        min-width: 20%; // Set the minimum width of the dropdown menu
+        background-color: #ffffff; // Set the background color
+        border: 1px solid #ccc; // Set the border style
+        padding: 0px 0px 0px 0px; // Add some padding to the menu items
+        z-index: 999; // Adjust the z-index as needed
+        text-align: center;
+        border-radius: 4px; // Add border radius for rounded corners
+        padding: 10px; // Add padding between the menu items
+
+        #changePhoto{
+          text-decoration: none;    
+          }
+        #logoutButton{
+            text-decoration: none;  
+          }
+        #profile{
+          text-decoration: none;  
+        }
+        li {
+          list-style: none; // Remove the default bullet points
+          padding: 8px 16px; // Add padding to each menu item
+          border-radius: 4px;
+          background-color: #eeeeee;
+          margin: 5% 0% 0% ;
+          &:hover {
+            background-color: #F8F8FF; // Apply background color on hover
+          }
+
+          a {
+            color: #333; // Set the link text color
+
+            &:hover {
+              text-decoration: none; // Remove underline on hover
+            }
+          }
+        }
+      }
+    }
+  }
+}

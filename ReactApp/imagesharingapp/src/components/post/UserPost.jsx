@@ -18,7 +18,7 @@ const UserPost = ({post}) =>{
               <p>{post.desc}</p>
               <span className="date">{moment(post.date).fromNow()}</span>
               <ShareButton />
-              <img className='likebutton' src={likebutton} alt="likebutton" />
+              {/* <img className='likebutton' src={likebutton} alt="likebutton" /> */}
 
 
             </div>
